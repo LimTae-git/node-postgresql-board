@@ -5,12 +5,10 @@ const path = require('path');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
-
 require('dotenv').config();
 
 const { Client } = require('pg');
 const Query = require('pg').Query
-
 
 const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');
@@ -29,24 +27,23 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser('process.env.COOKIE_SECRET'));
+app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
-  resave: false,
-  saveUninitialized: false,
-  secret: 'process.env.COOKIE_SECRET',
-  cookie: {
-    httpOnly: true,
-    secure: false,
-  },
+    resave: false,
+    saveUninitialized: false,
+    secret: 'process.env.COOKIE_SECRET',
+    cookie: {
+        httpOnly: true,
+        secure: false,
+    },
 }));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-
 app.use('/', pageRouter);
 app.use('/auth', authRouter);
+
 app.use((req, res, next) => {
   const err = new Error('Not Found');
   err.status = 404;
@@ -55,9 +52,9 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === 'development' ? err: {};
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error');  
 });
 
 app.listen(app.get('port'), () => {

@@ -46,7 +46,7 @@ html, body {
   width: 50%;
 }
 
-input[type='text'], input[type='id'], input[type='password'], textarea {
+input[type='text'], input[type='email'], input[type='password'], textarea {
   border-radius: 4px;
   height: 20px;
   padding: 10px;

@@ -1,16 +1,11 @@
 const express = require('express');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
-
+const { Post, User } = require('../models');
 const router = express.Router();
 
 /// 메인 페이지 ///
-router.get('/', (req, res, next) => {
-  res.render('main', {
-    title: 'messageBoard',
-    contents: [],
-    user: req.user,
-    loginError: req.flash('loginError'),
-  });
+router.get('/', (req, res) => {
+  res.render('main')
 });
 
 /// 로그인 페이지 ///

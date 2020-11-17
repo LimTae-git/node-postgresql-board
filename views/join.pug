@@ -17,10 +17,10 @@ html
       .join_container
         .content_header
           h1 회원가입
-        form#join-form(action='/join' method = 'post')
+        form#join-form(action='/auth/join' method = 'post')
           .input-group
             td  아이디 입력
-            input#id(type='id' name='id' placeholder='아이디를 입력해주세요.')
+            input#email(type='email' name='email' placeholder='아이디를 입력해주세요.')
           .input-group
             td  닉네임 만들기
             input#join-nick(type='text' name='nick' placeholder='닉네임을 입력해주세요.')

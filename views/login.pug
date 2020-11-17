@@ -15,11 +15,11 @@ html
       .log_container
         .content_header
           h1 로그인
-        form#login-form(action='/login' method='post')
+        form#login-form(action='/auth/login' method='post')
           .input-group
-            input#id(type='id' name='id' placeholder='ID')
+            input#email(type='email' name='email' placeholder='ID')
           .input-group
-            input#pw(type='password' name='password1' placeholder='Password')
+            input#pw(type='password' name='password' placeholder='Password')
           if joinError
             .error-message= joinError
           div(class = 'btn-class')
