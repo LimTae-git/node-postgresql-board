@@ -1,0 +1,77 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.main_header {
+  width: 60%;
+  margin: 0 auto;
+  height: 130px;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 30px;
+}
+
+.title a {
+  font-size: 55px;
+  text-decoration: none;
+  color: black;
+}
+
+.main_gnb {
+  padding-top: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  
+}
+
+.main_gnb a {
+  margin: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.top_menu_bar {
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: black;
+}
+.top_menu {
+  overflow: hidden;
+  height: 50px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.top_menu_1, .top_menu_2, .top_menu_3, .top_menu_4, .top_menu_5 {
+  float: left;
+  padding: 10px;
+}
+.top_menu_1 a, .top_menu_2 a, .top_menu_3 a, .top_menu_4 a, .top_menu_5 a {
+  margin-right: 50px;
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+}
+
+.section {
+  width: 60%;
+  margin: 0 auto;
+  height: 300px;
+  position: relative;
+}
+
+.section_table {
+  margin-top: 20px;
+  background-color: white;
+  border-top: 3px solid black;
+  border-bottom: 1.5px solid lightgray;
+}

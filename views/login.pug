@@ -1,0 +1,30 @@
+doctype
+
+html
+  head
+    meta(charset='UTF-8')
+    title = title
+    meta(name='viewport' content='width=device-width, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    link(rel='stylesheet' href='/login.css')
+  body
+    .login_header
+      .title
+        a(href='/') LimT
+    .container
+      .log_container
+        .content_header
+          h1 로그인
+        form#login-form(action='/login' method='post')
+          .input-group
+            input#id(type='id' name='id' placeholder='ID')
+          .input-group
+            input#pw(type='password' name='password1' placeholder='Password')
+          if joinError
+            .error-message= joinError
+          div(class = 'btn-class')
+            button#login.btn(type='submit') 로그인
+          div(class = 'btn-class')
+            a(href='/join') 회원가입
+      block content
+
