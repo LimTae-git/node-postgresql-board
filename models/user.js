@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => (
       allowNull: true,
     },
     provider: {
-      type: DataTypes.STRING(10),
+      type: DataTypes.STRING,
       allowNull: false,
       defaultValue: 'local',
     },

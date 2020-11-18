@@ -1,7 +1,8 @@
 const express = require('express');
 const passport = require('passport');
+const bcryptjs = require('bcryptjs');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
-const { User } = require('../models');
+const { User, Post } = require('../models');
 
 const router = express.Router();
 
@@ -14,10 +15,11 @@ router.post('/join', isNotLoggedIn, async (req, res, next) => {
       req.flash('joinError', '이미 가입된 이메일 입니다.');
       return res.redirect('/join');
     }
+    const hash = await bcryptjs.hash(password,12);
     await User.create({
       email,
       nick,
-      password,
+      password: hash,
     });
     return res.redirect('/login');
   } catch (error) {
@@ -47,11 +49,13 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
   }) (req, res, next);
 });
 
+/// 글쓰기 라우터 ///
 
+/// 로그아웃 라우터 ///
 router.get('/logout', isLoggedIn, (req, res) => {
   req.logout();
   req.session.destroy();
-  req.redirect('/login');
+  res.redirect('/');
 });
 
 module.exports = router;

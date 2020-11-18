@@ -1,1 +1,0 @@
-DEV_DATABASE_URL=postgres://<lim>:<1234>@127.0.0.1:5432/nodeboard

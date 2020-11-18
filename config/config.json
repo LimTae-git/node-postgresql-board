@@ -1,26 +1,23 @@
 {
   "development": {
-    "username": "lim",
+    "username": "postgres",
     "password": "1234",
     "database": "nodeboard",
     "host": "127.0.0.1",
-    "dialect": "postgresql",
-    "operatorsAliases": false
+    "dialect": "postgresql"
   },
   "test": {
     "username": "root",
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "postgresql",
-    "operatorsAliases": false
+    "dialect": "postgresql"
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "postgresql",
-    "operatorsAliases": false
+    "dialect": "postgresql"
   }
 }

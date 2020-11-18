@@ -4,8 +4,8 @@ html
   head
     meta(charset='UTF-8')
     title = title
-    meta(name='viewport' content='width=device-width', user-scalable='no')
-    meta(http-equiv='X-UA-Comptable' content='IE=edge')
+    meta(name='viewport' content='width=device-width, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
     link(rel='stylesheet' href='/join.css')
   body
     .join_header
@@ -26,7 +26,7 @@ html
             input#join-nick(type='text' name='nick' placeholder='닉네임을 입력해주세요.')
           .input-group
             td  비밀번호 입력
-            input#pw(type='password' name='password1' onchange="check_pw()" placeholder='비밀번호를 입력해주세요.')
+            input#pw(type='password' name='password' onchange="check_pw()" placeholder='비밀번호를 입력해주세요.')
           .input-group
             input#pw2(type='password' name='password2' onchange="check_pw()" placeholder='비밀번호를 재확인해 주세요.')
             span(id='check')

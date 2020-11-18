@@ -1,0 +1,120 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.main_header {
+  width: 60%;
+  margin: 0 auto;
+  height: 130px;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 30px;
+}
+
+.title a {
+  font-size: 55px;
+  text-decoration: none;
+  color: black;
+}
+
+.main_gnb {
+  padding-top: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  
+}
+
+.main_gnb a {
+  margin: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.top_menu_bar {
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: black;
+}
+.top_menu {
+  overflow: hidden;
+  height: 50px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.top_menu_1, .top_menu_2, .top_menu_3, .top_menu_4, .top_menu_5 {
+  float: left;
+  padding: 10px;
+}
+.top_menu_1 a, .top_menu_2 a, .top_menu_3 a, .top_menu_4 a, .top_menu_5 a {
+  margin-right: 50px;
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+}
+.section {
+  padding: 50px;
+  width: 60%;
+  margin: 0 auto;
+  height: 800px;
+  position: relative;
+}
+
+.container {
+  border: 3px groove gray;
+  width: 100%;
+  margin: 0 auto;
+  height: 800px;
+}
+
+.write_container {
+  width: 90%;
+  height: 800px;
+  margin: 0 auto;
+}
+
+#write-form {
+  padding-top: 30px;
+}
+
+.write_container_title {
+  padding-bottom: 30px;
+}
+
+.write_container textarea {
+  padding-top: 10px;
+  width: 99%;
+  height: 600px;
+}
+
+.write_container input {
+  width:60%;
+  height:30px;
+}
+
+.btn {
+  margin-top: 10px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  background: black;
+  border: 1px solid silver;
+  color: white;
+  height: 37px;
+  line-height: 37px;
+  width: 10%;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  float: right;
+}

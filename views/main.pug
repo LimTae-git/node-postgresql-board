@@ -12,11 +12,11 @@ html
       .title
         a(href='/') LimT
       .main_gnb
-          if user && user.id
-            a(href='/auth/logout') 로그아웃
-          else
-            a(href='/login') 로그인
-            a(href='/join') 회원가입
+        if user && user.id
+          a(href='/auth/logout') 로그아웃
+        else
+          a(href='/login') 로그인
+          a(href='/join') 회원가입
     .top_menu_bar
       .top_menu
         .top_menu_1
@@ -30,6 +30,8 @@ html
         .top_menu_5
           a(href='/') 메뉴5
     .section
+      .write-btn
+        a(href='/write') 글쓰기
       .section_table
         table(width='100%')
           thead
@@ -39,8 +41,3 @@ html
               th(scope='cols' width='10%') 조회
               th(scope='cols' width='10%') 날짜
               th(scope='cols' width='10%') 글쓴이
-
-
-
-
-
