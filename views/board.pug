@@ -1,0 +1,75 @@
+doctype
+
+html
+  head
+    meta(charset='UTF-8')
+    title = title
+    meta(name='viewport' content='width=device-width, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    link(rel='stylesheet' href='/board.css')
+  body
+    .main_header
+      .title
+        a(href='/') LimT
+      .main_gnb
+        if user && user.id
+          user-name="[ '안녕하세요"+ " "+ user.nick+ ""+ "님' ]"
+          a(href='/auth/logout') 로그아웃
+        else
+          a(href='/login') 로그인
+          a(href='/join') 회원가입
+    .top_menu_bar
+      .top_menu
+        .top_menu_1
+          a(href='/') 게시판
+        .top_menu_2
+          a(href='/') 메뉴2
+        .top_menu_3
+          a(href='/') 메뉴3
+        .top_menu_4
+          a(href='/') 메뉴4
+        .top_menu_5
+          a(href='/') 메뉴5
+    .section
+      .container
+        .post_container
+          .post_container_title
+            th
+              td= post.title
+          .post_container_writer
+            th
+              td= post.writer
+          .post_container_content
+            th
+              td= post.content
+          button#list_btn(type='button' onclick="location.href='/'") 목록
+
+  script.
+    
+    /// 게시글 삭제 ///
+    /*
+    document.querySelectorAll('#delete').forEach(function (tag) {
+      tag.addEventListener('click', function () {
+        var isLoggedIn = document.querySelector('#my-id');
+        var boardId = tag.parentNode.querySelector('.board-id').value;
+        if (isLoggedIn) {
+          var userId = tag.parentNode.querySelector('.board-writer-id').value;
+          var myId = isLoggedIn.value;
+          if (userId === myId) {
+            if (confirm('게시글을 삭제하시겠습니까?')) {
+              var xhr = new XMLHttpRequest();
+              xhr.onload = function () {
+                if (xhr.status === 200) {
+                  location.reload();                                    
+                } else {
+                  console.error(xhr.responseText);
+                }
+              };
+              xhr.open('DELETE', '/post/' + boardId);
+              xhr.send();
+            }
+          }
+        }
+      });
+    });
+    */

@@ -9,16 +9,13 @@ router.get('/', (req, res, next) => {
     include: [{
       model: User,
       attributes: ['id', 'nick', 'updatedAt'],
-    }, {
-      model: User,
-      attributes: ['id', 'nick'],
     }],
     order: [['createdAt', 'DESC']],
   })
   .then((post) => {
     res.render('main', {
-      title: 'Board',
-      board: post,
+      title: 'board',
+      posts: post,
       user: req.user,
       loginError: req.flash('loginError'),
     });
@@ -30,8 +27,12 @@ router.get('/', (req, res, next) => {
 });
 
 /// 로그인 페이지 ///
-router.get('/login', (req, res) => {
-  res.render('login')
+router.get('/login', isNotLoggedIn, (req, res) => {
+  res.render('login', {
+    title: '로그인',
+    user: req.user,
+    loginError: req.flash('loginError'),
+  })
 })
 
 /// 회원가입 페이지 ///
@@ -51,5 +52,22 @@ router.get('/write', isLoggedIn, (req, res) => {
   })
 })
 
+/// 게시글 보기 페이지 ///
+router.get('/board/:id', isLoggedIn, (req, res, next) => {
+  const postID = req.params.id;
+  Post.findOne({
+    where: {id:postID}
+  })
+  .then(result => {
+    res.render('board', {
+      post: result,
+      user: req.user,
+    });
+  })
+  .catch((error) => {
+    console.error(error);
+    next(error);
+  })
+});
 
 module.exports = router;

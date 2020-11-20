@@ -17,11 +17,11 @@ html
           h1 로그인
         form#login-form(action='/auth/login' method='post')
           .input-group
-            input#email(type='email' name='email' placeholder='ID')
+            input#email(type='email' name='email' placeholder='ID' required autofocus)
           .input-group
-            input#pw(type='password' name='password' placeholder='Password')
-          if joinError
-            .error-message= joinError
+            input#pw(type='password' name='password' placeholder='Password' required)
+          if loginError
+            .error-message= loginError
           div(class = 'btn-class')
             button#login.btn(type='submit') 로그인
           div(class = 'btn-class')

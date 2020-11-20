@@ -13,6 +13,7 @@ html
         a(href='/') LimT
       .main_gnb
         if user && user.id
+          user-name="[ '안녕하세요"+ " "+ user.nick+ ""+ "님' ]"
           a(href='/auth/logout') 로그아웃
         else
           a(href='/login') 로그인
@@ -39,4 +40,4 @@ html
             th
               textarea#content(name='content' placeholder='500자 내로 글을 써주세요')
             div(class= 'btn-class')
-              button#write.btn(type='submit') 글쓰기
+              button#write_btn(type='submit') 글쓰기

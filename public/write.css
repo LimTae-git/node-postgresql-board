@@ -101,20 +101,11 @@ html, body {
   height:30px;
 }
 
-.btn {
-  margin-top: 10px;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 4px;
-  background: black;
+#write_btn {
+  color: black;
   border: 1px solid silver;
-  color: white;
-  height: 37px;
-  line-height: 37px;
-  width: 10%;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
+  background: white;
+  width: 100px;
+  height: 30px;
   float: right;
 }

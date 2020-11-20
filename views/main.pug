@@ -13,6 +13,7 @@ html
         a(href='/') LimT
       .main_gnb
         if user && user.id
+          user-name="[ '안녕하세요"+ " "+ user.nick+ ""+ "님' ]"
           a(href='/auth/logout') 로그아웃
         else
           a(href='/login') 로그인
@@ -28,10 +29,10 @@ html
         .top_menu_4
           a(href='/') 메뉴4
         .top_menu_5
-          a(href='/') 메뉴5
-    .section
-      .write-btn
-        a(href='/write') 글쓰기
+          a(href='/') 메뉴5  
+    .section_1
+      button#write_btn(type='button' onclick="location.href='/write'") 글쓰기
+    .section_2
       .section_table
         table(width='100%')
           thead
@@ -41,3 +42,13 @@ html
               th(scope='cols' width='10%') 조회
               th(scope='cols' width='10%') 날짜
               th(scope='cols' width='10%') 글쓴이
+          for post in posts
+            tr
+              td= post.id
+              td 
+                a(href='/board/'+ post.id)=post.title
+              td= post.count
+              td= 날짜
+              td= post.writer
+
+            

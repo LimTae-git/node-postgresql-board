@@ -49,7 +49,6 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
   }) (req, res, next);
 });
 
-/// 글쓰기 라우터 ///
 
 /// 로그아웃 라우터 ///
 router.get('/logout', isLoggedIn, (req, res) => {
@@ -57,5 +56,6 @@ router.get('/logout', isLoggedIn, (req, res) => {
   req.session.destroy();
   res.redirect('/');
 });
+
 
 module.exports = router;

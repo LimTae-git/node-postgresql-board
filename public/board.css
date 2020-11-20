@@ -62,13 +62,7 @@ html, body {
   color: white;
 }
 
-.section_1 {
-  padding:10px;
-  width: 60%;
-  margin: 0 auto;
-  position: relative;
-}
-.section_2 {
+.section {
   width: 60%;
   margin: 0 auto;
   height: 300px;
@@ -83,7 +77,44 @@ html, body {
   border-bottom: 1.5px solid lightgray;
 }
 
-#write_btn {
+.container {
+  width: 100%;
+  margin: 0 auto;
+  height: 800px;
+}
+
+.post_container {
+  padding-top: 30px;
+  width: 90%;
+  height: 800px;
+  margin: 0 auto;
+}
+
+.post_container_title {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px;
+  height:40px;
+  border-top: 3px solid black;
+}
+
+.post_container_writer {
+  font-weight: 200;
+  padding-left: 10px;
+  font-size: 15px;
+  height: 30px;
+  border-bottom: 1px dotted gray;
+}
+
+.post_container_content {
+  font-weight: 300;
+  font-size: 15px;
+  padding: 10px;
+  height: 500px;
+  border-bottom: 3px solid black;
+}
+
+#list_btn, #delete, #modify {
   color: black;
   border: 1px solid silver;
   background: white;
